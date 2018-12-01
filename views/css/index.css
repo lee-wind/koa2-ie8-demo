@@ -1,0 +1,89 @@
+@media (min-width: 1200px) {
+    body {
+        background-color: red;
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px){
+    body {
+        background-color: yellow;
+    }
+}
+@media (min-width: 768px) and (max-width: 992px){
+    body {
+        background-color: green;
+    }
+}
+nav{
+    width: 400px;
+    height: 100px;
+    background-color: pink;
+    border-radius: 10px;
+    behavior: url(css/PIE.htc);
+    font-size: .2rem;
+}
+form{
+    font-size: 0;
+}
+input{
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+    behavior: url(css/PIE.htc);
+    border: 1px solid #333333;
+}
+.rgba{
+    width: 300px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.55);
+    -pie-background: rgba(0, 0, 0, 0.55);
+    behavior: url(css/PIE.htc);
+    font-size: .2rem;
+}
+.opacity{
+    width: 300px;
+    height: 100px;
+    background-color: black;
+    opacity: 0.55;
+    filter: alpha(opacity = 55);
+    font-size: 0.2rem;
+}
+.box-shadow{
+    width: 300px;
+    height: 100px;
+    background-color: #999999;
+    box-shadow: 3px 3px 5px #000;
+    behavior: url(css/PIE.htc);
+    font-size: .2rem;
+}
+.bg-img{
+    width: 2rem;
+    height: 1rem;
+    background: url("../images/bg.png");
+    background-size: 100% 100%;
+    behavior: url(css/backgroundsize.min.htc);
+}
+.text-ellipsis{
+    width: 500px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 0.2rem;
+    background-color: lightcyan;
+}
+ul.template{
+    font-size: 0;
+}
+li.item{
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    background-color: blue;
+    color: #ffffff;
+    font-size: .2rem
+}
+#grad1 {
+    height: 200px;
+    background: -webkit-linear-gradient(red, blue); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(red, blue); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(red, blue); /* Firefox 3.6 - 15 */
+    background: linear-gradient(red, blue); /* 标准的语法（必须放在最后） */
+}

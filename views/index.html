@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>IE8采坑</title>
+    <!--全局样式-->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!--该页样式-->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <script src="./js/html5shiv.min.js"></script>
+    <script src="./js/respond.min.js"></script>
+    <!--兼容es5-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js"></script>-->
+    <script src="./js/es5-shim.min.js"></script>
+    <script src="./js/es5-sham.min.js"></script>
+    <script src="./js/json3.min.js"></script>
+    <!--动态设置rem，注意此文件经过修改，增加了ie8事件监听attachEvent-->
+    <script src="./js/lib-flexible.js"></script>
+</head>
+<body>
+<nav>导航</nav>
+<form>
+    <input type="text" placeholder="请输入用户名">
+    <input type="text">
+    <input type="text" placeholder="请输入文本">
+</form>
+<p class="rgba">rgba透明文本</p>
+<hr>
+<p class="opacity"></p>
+<p class="box-shadow">box-shadow</p>
+<hr>
+<p class="text-ellipsis">文本省略：这样断开了,在IE8里面是不会变成省略号的(但是在IE6/7/FF/Chrome都没有问题),其实都单行省略了</p>
+<div class="bg-img"></div>
+<ul class="template">
+
+</ul>
+<!--rem兼容ie8-->
+<script src="./js/rem.min.js"></script>
+<!--jquery-->
+<script src="./js/jquery-1.12.0.min.js"></script>
+<!--template模板引擎-->
+<script src="./js/template-web.js"></script>
+<!--解决ie8不支持placeholder-->
+<script src="./js/jquery-placeholder.min.js"></script>
+
+<script id="template" type="text/html">
+  {{each list as value i}}
+    <li class="item">{{value.name}}</li>
+  {{/each}}
+</script>
+<script>
+    $.get('/index', function(data){
+       $('nav').text(data);
+    });
+    $('form input').each(function(){
+        $(this).placeholder();
+    });
+    var obj = {
+        list: [{
+            name: "wind"
+        }, {
+            name: "sun"
+        }]
+    };
+    $(function(){
+        $('.template').html(template('template', obj));
+    });
+</script>
+</body>
+</html>

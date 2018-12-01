@@ -1,0 +1,56 @@
+body, h1, h2, h3, h4, h5, h6, p, hr,
+a, img, div, span,
+ul, ol, li, dl, dt, dd,
+table, thead, tbody, tr, th, td,
+form, input, select, option, textarea,
+label, button
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+input, select, textarea, button{
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+}
+a:link, a:visited, a:hover, a:active{
+    color: #000000;
+}
+a, input[type=submit], input[type=button], button{
+    cursor: pointer
+}
+iframe{
+    outline: none;
+    width: 0;
+    height: 0;
+    border: none;
+}
+.relative{
+    position: relative;
+}
+.absolute-right-bottom{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.block{
+    display: block;
+}
+.inline-block{
+    display: inline-block;
+}
+.inline{
+    display: inline;
+}
+.text-ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/*****************************************/
